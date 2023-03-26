@@ -140,13 +140,9 @@ export default class Level extends Phaser.Scene {
 	}
 
 
-	collectStar(obj1?: Phaser.GameObjects.GameObject, obj2?: Phaser.GameObjects.GameObject) {
-		this.stars!.children.iterate(function (child: Phaser.GameObjects.GameObject) {
-			// Cast child to Arcade Sprite type
-			const spriteChild = child as Phaser.Physics.Arcade.Sprite;
-			spriteChild.disableBody(true, true);
-
-		});
+	collectStar(obj1?: Phaser.GameObjects.GameObject, star?: Phaser.GameObjects.GameObject) {
+		const spriteChild = star as Phaser.Physics.Arcade.Sprite;
+		spriteChild.disableBody(true, true);
 
 		//  Add and update the score
 		this.score += 10;
